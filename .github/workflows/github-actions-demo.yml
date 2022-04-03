@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+      - run: pip install pylint
       - run: pylint app.py	
   tworz-obraz-job:
     runs-on: ubuntu-latest

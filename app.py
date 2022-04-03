@@ -1,11 +1,10 @@
 from flask import Flask
-app = Flask(__name__)
+APP = Flask(__name__)
 
-@app.route('/')
+
+@APP.route('/')
 def index():
-    return "<h1>Hello WSB! Greetings from Flask $ Docker!</h1>"
-    
-    **Probojemy**
+    """<h1>Hello WSB! Greetings from Flask $ Docker!</h1>"""
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    APP.run(debug=True)

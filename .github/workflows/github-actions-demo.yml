@@ -2,17 +2,23 @@ name: Moje pierwsze workflow
 on: [push]
 jobs:
 	sprawdzaj-wersje-job:
-	runs-on: ubuntu-latest
-	steps:
-		- python --version
-		- docker -v
+		runs-on: ubuntu-latest
+		steps:
+			- name: Check out repository code
+			  uses: actions/checkout@v3
+			- run: python --version
+			- run: docker -v
 	testuj-pylint-job:
-	runs-on: ubuntu-latest
-	steps:
-		- pylint app.py
+		runs-on: ubuntu-latest
+		steps:
+			- name: Check out repository code
+			  uses: actions/checkout@v3
+			- run: pylint app.py
 		
 	tworz-obraz-job:
-	runs-on: ubuntu-latest
-	steps:
-		- docker build --tag test-flask-app .
-		- docker run -d -p 5000:5000 test-flask-app 		
+		runs-on: ubuntu-latest
+		steps:
+			- name: Check out repository code
+			  uses: actions/checkout@v3	
+			- run: docker build --tag test-flask-app .
+			- run: docker run -d -p 5000:5000 test-flask-app 		

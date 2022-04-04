@@ -1,3 +1,6 @@
+"""
+Tutaj wrzucam krtki opis dotyczacy dzialania mojego kodu
+"""
 from flask import Flask
 APP = Flask(__name__)
 
